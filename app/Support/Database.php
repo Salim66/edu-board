@@ -2,6 +2,7 @@
 	
 	require_once '../../config.php';
 	namespace Edu\Board\Support;
+	use PDO;
 
 	/**
 	 * Database Management

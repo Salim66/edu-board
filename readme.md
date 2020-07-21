@@ -18,6 +18,7 @@ This is a learning purpose project for student result calculation. We use some p
 ```php
 require_once '../../config.php';
 namespace Edu\Board\Support;
+use PDO;
 
 /**
  * Database Management
