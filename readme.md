@@ -12,3 +12,4 @@ This is a learning purpose project for student result calculation. We use some p
 - MySQL
 - OOP
 - PDO
+
