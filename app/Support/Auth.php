@@ -54,6 +54,15 @@
 			return $this -> dataCheck('users', $email_uname);
 		}
 
+		/**
+		 * Logout System
+		 */
+		public function userLogout()
+		{
+			session_destroy();
+			header("location:index.php");
+		}
+
 
 
 	}
