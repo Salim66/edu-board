@@ -1,13 +1,14 @@
 <?php 
 	
-	require_once '../../config.php';
 	namespace Edu\Board\Support;
+	
+	
 	use PDO;
 
 	/**
 	 * Database Management
 	 */
-	class Database
+	abstract class Database
 	{
 		
 		
@@ -23,9 +24,27 @@
  		/**
  		 * Database Connection
  		 */
-		private function connection()
+		protected function connection()
 		{
-			$this -> connection = new PDO("mysql:host=". $this -> host .";db_name=". $this -> db , $this -> user , $this -> pass );
+			return $this -> connection = new PDO("mysql:host=". $this -> host .";dbname=". $this -> db , $this -> user , $this -> pass );
+		}
+
+		/**
+		 * Data Check
+		 */
+		protected function dataCheck($table, $data)
+		{
+			$stmt = $this -> connection() -> prepare("SELECT * FROM $table WHERE email='$data' || uname='$data'");
+			$stmt -> execute();
+
+			$num = $stmt -> rowCount();
+
+			return [
+
+				'num' => $num,
+				'data' => $stmt,
+
+			];
 		}
 
 

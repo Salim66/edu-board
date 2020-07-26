@@ -1,4 +1,7 @@
 <?php 
+	
+	// SESSION START
+	session_start();
 
 	/**
 	 * Server Constant
