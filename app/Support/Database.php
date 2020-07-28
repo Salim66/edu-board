@@ -47,6 +47,51 @@
 			];
 		}
 
+		/**
+		 * 
+		 */
+		public function dataCheckPro($tbl, array $data, $condition = 'AND')
+		{
+			$query_string = '';
+			foreach ($data as $key => $val) {
+
+				$query_string .= $key . "='$val' AND ";
+
+			}
+
+			$query_array = explode(' ', $query_string);
+			array_pop($query_array);
+			array_pop($query_array);
+
+			$final_query_array = implode(' ', $query_array);
+
+			$stmt = $this -> connection() -> prepare("SELECT * FROM $tbl WHERE $final_query_array");
+			$stmt -> execute();
+
+
+		}
+
+		/**
+		 * Change password
+		 */
+		public function update($tbl, $user_id, array $data)
+		{
+			$query_string = '';
+			foreach ($data as $key => $val) {
+				$query_string .= $key . "='$val' , ";
+			}
+
+			$query_array = explode(' ', $query_string);
+			array_pop($query_array);
+			array_pop($query_array);
+
+			$final_query_array = implode(' ', $query_array);
+
+			$stmt = $this -> connection() -> prepare("UPDATE $tbl SET $final_query_array WHERE id='$user_id'");
+			$stmt -> execute();
+
+		}
+
 
 
 	}
