@@ -32,30 +32,12 @@
 		/**
 		 * Data Check
 		 */
-		protected function dataCheck($table, $data)
-		{
-			$stmt = $this -> connection() -> prepare("SELECT * FROM $table WHERE email='$data' || uname='$data'");
-			$stmt -> execute();
-
-			$num = $stmt -> rowCount();
-
-			return [
-
-				'num' => $num,
-				'data' => $stmt,
-
-			];
-		}
-
-		/**
-		 * 
-		 */
-		public function dataCheckPro($tbl, array $data, $condition = 'AND')
+		public function dataCheck($tbl, array $data, $condition = 'AND')
 		{
 			$query_string = '';
 			foreach ($data as $key => $val) {
 
-				$query_string .= $key . "='$val' AND ";
+				$query_string .= $key . "='$val' $condition ";
 
 			}
 
@@ -67,6 +49,12 @@
 
 			$stmt = $this -> connection() -> prepare("SELECT * FROM $tbl WHERE $final_query_array");
 			$stmt -> execute();
+			$num = $stmt -> rowCount();
+
+			return [
+				'num' => $num,
+				'data' => $stmt,
+			];
 
 
 		}
