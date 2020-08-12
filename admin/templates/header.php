@@ -1,25 +1,26 @@
-<?php require_once '../config.php'; ?>
-<?php require_once "../vendor/autoload.php"; ?>
-<?php 
 
+<?php require_once "../config.php"; ?>
+<?php require_once "../vendor/autoload.php"; ?>
+<?php  
+    
     use Edu\Board\Support\Auth;
 
     $auth = new Auth;
+?>
 
- ?>
+<?php  
 
-<?php 
 
     /**
-     * get input from url
+     * Logout System 
      */
     if ( isset($_GET['logout']) AND $_GET['logout'] == 'success' ) {
         $auth -> userLogout();
-    } 
-    
+    }
 
 
- ?>
+
+?>
 
 <!DOCTYPE html>
 <html lang="en" class="app">
@@ -40,31 +41,40 @@
 
 
     <section class="vbox">
+
+
+
+        
         <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
             <div class="navbar-header aside-md dk">
                 <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html"> <i class="fa fa-bars"></i> </a>
                 <a href="index.html" class="navbar-brand"> <img src="images/logo.png" class="m-r-sm" alt="scale"> <span class="hidden-nav-xs">Scale</span> </a>
                 <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user"> <i class="fa fa-cog"></i> </a>
             </div>
-            
-            
+
+
             <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
-               
+
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left">
-
-                     <img src="images/<?php echo $_SESSION['photo']; ?>" alt="..."> 
-
-                 </span> <?php echo $_SESSION['name']; ?> <b class="caret"></b> </a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/<?php echo $_SESSION['photo']; ?>" alt="..."> </span> <?php echo $_SESSION['name']; ?><b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight">
-                        <li> <span class="arrow top"></span> <a href="password_change.php">Settings</a> </li>
+                        <li> <span class="arrow top"></span> <a href="password_change.php">Change Password</a> </li>
                         <li> <a href="profile.html">Profile</a> </li>
                         <li class="divider"></li>
-                        <li> <a href="?logout=success">Logout</a> </li>
+                        <li> <a href="?logout=success" >Logout</a> </li>
                     </ul>
                 </li>
             </ul>
         </header>
 
 
-        <?php include_once 'templates/menu.php'; ?>
+        <section>
+            <section class="hbox stretch">
+
+
+
+                <?php include_once "templates/menu.php"; ?>
+
+
+
+

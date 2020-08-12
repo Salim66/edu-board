@@ -17,7 +17,7 @@
                                              <i class="on md b-black"></i> </span> <span class="hidden-nav-xs clear"> <span class="block m-t-xs"> <strong class="font-bold text-lt"><?php echo $_SESSION['name']; ?></strong> <b class="caret"></b> </span> <span class="text-muted text-xs block"><?php echo $_SESSION['cell']; ?></span> </span>
                                         </a>
                                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                            <li> <span class="arrow top hidden-nav-xs"></span> <a href="password_change.php">Settings</a> </li>
+                                            <li> <span class="arrow top hidden-nav-xs"></span> <a href="password_change.php">Change Password</a> </li>
                                             <li> <a href="profile.html">Profile</a> </li>
                                             <li class="divider"></li>
                                              <li> <a href="?logout=success">Logout</a> </li>
@@ -40,20 +40,20 @@
                                 <nav class="nav-primary hidden-xs">
                                     <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Start</div>
                                     <ul class="nav nav-main" data-ride="collapse">
-                                        <li class="active">
-                                            <a href="index.html" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Dashboard</span> </a>
+                                        <li>
+                                            <a href="dashboard.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Dashboard</span> </a>
                                         </li>
 
                                         <li>
-                                            <a href="index.html" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Students</span> </a>
+                                            <a href="students.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Students</span> </a>
                                         </li>
 
                                         <li>
-                                            <a href="index.html" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Results</span> </a>
+                                            <a href="results.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Results</span> </a>
                                         </li>
 
                                         <li>
-                                            <a href="index.html" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Users</span> </a>
+                                            <a href="users.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Users</span> </a>
                                         </li>
                                        
 

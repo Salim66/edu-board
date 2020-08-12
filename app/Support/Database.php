@@ -29,6 +29,66 @@
 			return $this -> connection = new PDO("mysql:host=". $this -> host .";dbname=". $this -> db , $this -> user , $this -> pass );
 		}
 
+
+		/**
+		 * Data create
+		 */
+		public function create($table_name, $data)
+		{
+
+			// Make SQL column from database
+			$array_key = array_keys($data);
+			$array_col = implode(',', $array_key);
+
+			// Make SQL values from database
+			$array_val = array_values($data);
+
+			foreach ($array_val as $value) {
+				
+				$from_value[] = "'".$value."'";
+
+			}
+
+			$array_values = implode(",", $from_value);
+
+
+			$sql = "INSERT INTO $table_name($array_col) VALUES($array_values)";
+			$stmt = $this -> connection() -> prepare($sql);
+			$stmt -> execute();
+
+			if ($stmt) {
+				return true;
+			} else {
+				return false;
+			}
+			
+		}
+
+		/**
+		 * Find data by id
+		 */
+		public function find($id)
+		{
+			
+		}
+
+		/**
+		 * single data delete
+		 */
+		public function delete($id)
+		{
+			
+		}
+
+		/**
+		 * All data show
+		 */
+		public function all($tbl)
+		{
+			
+		}
+
+
 		/**
 		 * Data Check
 		 */
@@ -60,7 +120,7 @@
 		}
 
 		/**
-		 * Change password
+		 * Change password / Update
 		 */
 		public function update($tbl, $user_id, array $data)
 		{
