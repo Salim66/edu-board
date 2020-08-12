@@ -38,12 +38,6 @@
                     </section>
 
 
-
-
-
-
-
-                    
                     <div id="add_user_modal" class="modal fade">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -112,21 +106,11 @@
                                             <th>action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Salim Hasan</td>
-                                            <td>salimhasanriad@gmail.com</td>
-                                            <td>01773980593</td>
-                                            <td>Admin</td>
-                                            <td><img style='widht:50px; height:50px;' src="images/a4.png" alt=""></td>
-                                            <td>Active</td>
-                                            <td>
-                                                <a href="" class="btn btn-info">View</a>
-                                                <a href="" class="btn btn-warning">Edit</a>
-                                                <a href="" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
+                                    <tbody id='all_users_tbody'>
+                                        
+
+
+
                                     </tbody>
                                 </table>
                             </section>

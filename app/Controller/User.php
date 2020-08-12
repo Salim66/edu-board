@@ -16,6 +16,8 @@
 		{
 			$data = $this -> create('users', [
 				'name' => $data['name'], 
+				'uname' => $data['uname'], 
+				'pass' => password_hash('login', PASSWORD_DEFAULT), 
 				'email' => $data['email'], 
 				'cell' => $data['cell'],
 				'role' => $data['role'], 
@@ -37,6 +39,17 @@
 			]);
 
 			return "<p class='alert alert-success'>Password change successfull !<button class='close' data-dismiss='alert' >&times;</button></p>";
+		}
+
+
+		/**
+		 * All user function
+		 */
+		public function allUser()
+		{
+			$data = $this -> all('users');
+
+			return $data;
 		}
 
 

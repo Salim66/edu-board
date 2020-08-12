@@ -39,7 +39,7 @@
                                 <!-- nav -->
                                 <nav class="nav-primary hidden-xs">
                                     <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Start</div>
-                                    <ul class="nav nav-main" data-ride="collapse">
+                                    <ul class="nav nav-main acn" data-ride="collapse">
                                         <li>
                                             <a href="dashboard.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Dashboard</span> </a>
                                         </li>
