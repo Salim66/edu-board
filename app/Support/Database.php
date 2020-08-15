@@ -29,6 +29,29 @@
 			return $this -> connection = new PDO("mysql:host=". $this -> host .";dbname=". $this -> db , $this -> user , $this -> pass );
 		}
 
+		/**
+	 *  File upload managements
+	 */
+	protected function fileUpload($file, $loacation='', array $file_type=['jpg','jpeg','png','gif'])
+	{
+		// file info
+		$file_name = $file['name'];
+		$file_tmp = $file['tmp_name'];
+		$file_size = $file['size'];
+
+		// file extension
+		$file_array = explode(".", $file_name);
+		$file_extension = strtolower(end($file_array));
+
+		// Unique file name
+		$unique_file_name = md5(time().rand()).".".$file_extension;
+
+		
+		move_uploaded_file($file_tmp, $loacation.$unique_file_name);
+		return $unique_file_name;
+
+	}
+
 
 		/**
 		 * Data create

@@ -2,9 +2,16 @@
 	$(document).ready(function(){
 
 
-		// add new user modal
+		// show user modal
 		$(document).on('click','a#add_user_btn', function(){
 			$('#add_user_modal').modal('show');
+
+			return false;
+		});
+
+		// show student modal
+		$(document).on('click','a#add_student_btn', function(){
+			$('#add_student_modal').modal('show');
 
 			return false;
 		});
@@ -70,6 +77,39 @@
 				return false;
 			}
 			
+
+		});
+
+		$(document).on('submit','form#add_student_form', function(e){
+			e.preventDefault();
+
+			let name = $('form#add_student_form input[name="name"]').val();
+			let roll = $('form#add_student_form input[name="roll"]').val();
+			let reg = $('form#add_student_form input[name="reg"]').val();
+
+			if ( name == '' || roll == '' || reg == '' ) {
+				$('.student-mess').html("<p class='alert alert-danger'>All fields are required !<button class='close' data-dismiss='alert' >&times;</button></p>");
+			} else {
+
+				$.ajax({
+					url : 'templates/ajax/student_add.php',
+					method : "POST",
+					data : new FormData(this),
+					contentType : false,
+					processData : false,
+					success : function(data){
+
+						$('form#add_student_form')[0].reset();
+						$('#add_student_modal').modal('hide');
+						$('.mess').html("<p class='alert alert-success'>Student added successful !<button class='close' data-dismiss='alert' >&times;</button></p>");
+
+
+					},
+
+
+				});
+
+			}
 
 		});
 
