@@ -75,9 +75,12 @@
 		/**
 		 * single data delete
 		 */
-		public function delete($id)
+		public function delete($tbl, $id)
 		{
-			
+			$sql = "DELETE FROM $tbl WHERE id='$id'";
+			$stmt = $this -> connection() -> prepare($sql);
+			$stmt -> execute();
+			return true;
 		}
 
 		/**

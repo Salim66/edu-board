@@ -47,6 +47,32 @@
 		});
 
 
+		// user data delete
+		$(document).on('click', 'a#user_delete', function(event){
+			event.preventDefault();
+
+			let del = confirm('Are you sure ?');
+			let id = $(this).attr('user_id');
+
+			if ( del == true ) {
+
+				$.ajax({
+					url : 'templates/ajax/user_delete.php',
+					method : "POST",
+					data : { id : id },
+					success : function(data){
+						$('.mess').html(data);
+						allUsers();
+					},
+				});
+
+			} else {
+				return false;
+			}
+			
+
+		});
+
 
 	});
 })(jQuery)
