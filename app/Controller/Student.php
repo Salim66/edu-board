@@ -4,6 +4,7 @@
 	namespace Edu\Board\Controller;
 
 	use Edu\Board\Support\Database;
+	use PDO;
 
 
 	/**
@@ -31,6 +32,16 @@
 				'photo' => $file_name,
 			]);
 
+		}
+
+		/**
+		 * All Student
+		 */
+		public function allStudent()
+		{
+			$data = $this -> all('students');
+
+			return $data -> fetchAll(PDO::FETCH_ASSOC);
 		}
 
 

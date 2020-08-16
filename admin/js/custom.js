@@ -17,7 +17,7 @@
 		});
 
 
-		// All user data fetch
+		// All user data show
 		function allUsers(){
 
 			$.ajax({
@@ -80,6 +80,20 @@
 
 		});
 
+
+		// All Student data show
+		function allStudents(){
+
+			$.ajax({
+				url : 'templates/ajax/student_all.php',
+				success : function(data){
+					$('table tbody#all_student').html(data);
+				}
+			});
+
+		}
+		allStudents();
+
 		$(document).on('submit','form#add_student_form', function(e){
 			e.preventDefault();
 
@@ -102,6 +116,7 @@
 						$('form#add_student_form')[0].reset();
 						$('#add_student_modal').modal('hide');
 						$('.mess').html("<p class='alert alert-success'>Student added successful !<button class='close' data-dismiss='alert' >&times;</button></p>");
+						allStudents();
 
 
 					},

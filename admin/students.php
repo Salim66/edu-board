@@ -161,29 +161,20 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Name</th>
-                                            <th>email</th>
-                                            <th>Cell</th>
-                                            <th>Role</th>
+                                            <th>Roll</th>
+                                            <th>Reg</th>
+                                            <th>Borad</th>
+                                            <th>Year</th>
                                             <th>Photo</th>
                                             <th>Status</th>
                                             <th>action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Salim Hasan</td>
-                                            <td>salimhasanriad@gmail.com</td>
-                                            <td>01773980593</td>
-                                            <td>Admin</td>
-                                            <td><img style='widht:50px; height:50px;' src="images/a4.png" alt=""></td>
-                                            <td>Active</td>
-                                            <td>
-                                                <a href="" class="btn btn-info">View</a>
-                                                <a href="" class="btn btn-warning">Edit</a>
-                                                <a href="" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
+                                    <tbody id='all_student'>
+                                        
+
+
+
                                     </tbody>
                                 </table>
                             </section>
