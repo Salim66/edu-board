@@ -24,7 +24,7 @@
 
                     <section class="row m-b-md">
                         <div class="col-sm-6">
-                            <h3 class="m-b-xs text-black">Settings</h3> <small>Welcome back, <?php echo $_SESSION['name']; ?>, <i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $_SESSION['email']; ?></small> </div>
+                            <h3 class="m-b-xs text-black">All Results</h3> <small>Welcome back, <?php echo $_SESSION['name']; ?>, <i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $_SESSION['email']; ?></small> </div>
                         <div class="col-sm-6 text-right text-left-xs m-t-md">
                             <div class="btn-group"> <a class="btn btn-rounded btn-default b-2x dropdown-toggle" data-toggle="dropdown">Widgets <span class="caret"></span></a>
                                 <ul class="dropdown-menu text-left pull-right">
@@ -44,31 +44,45 @@
 
 
                     
-                    <div id="add_user_modal" class="modal fade">
+                    <div id="add_result" class="modal fade">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <!-- <div class="modal-header"></div> -->
                                 <div class="modal-body">
-                                    <h2>Add new Result</h2>
+                                    <h2>Add Result</h2>
                                     <div class="mess"></div>
                                     <hr>
                                     <form id="add_student_form" action="" method="POST" enctype="multipart/form-data">
                                         <div class="form-group">
-                                            <label for="">Name</label>
+                                            <label for="">Search Student</label>
                                             <input class="form-control" name="name" type="text">
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Email</label>
+                                            <label for="">Bangla</label>
                                             <input class="form-control" name="email" type="text">
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Cell</label>
-                                            <input class="form-control" name="cell" type="text">
+                                            <label for="">English</label>
+                                            <input class="form-control" name="email" type="text">
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Photo</label>
-                                            <input class="" name="photo" type="file">
+                                            <label for="">Math</label>
+                                            <input class="form-control" name="email" type="text">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="">Social Science</label>
+                                            <input class="form-control" name="email" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Science</label>
+                                            <input class="form-control" name="email" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Religion</label>
+                                            <input class="form-control" name="email" type="text">
+                                        </div>
+                                        
+
                                         <div class="form-group">
                                             <input class="btn btn-primary" name="add" type="submit" value="Add Result">
                                         </div>
@@ -83,7 +97,7 @@
                         
                             <div class="mess"></div>
 
-                            <a id="add_user_btn" class="btn btn-sm btn-primary" href="#">Add new Result</a> 
+                            <a id="add_result_btn" class="btn btn-sm btn-primary" href="#">Add new Result</a> 
 
                             <br>
                             <br>

@@ -16,6 +16,13 @@
 			return false;
 		});
 
+		// show student modal
+		$(document).on('click','a#add_result_btn', function(){
+			$('#add_result').modal('show');
+
+			return false;
+		});
+
 
 		// All user data show
 		function allUsers(){
