@@ -135,6 +135,53 @@
 
 		});
 
+		// Search student for results
+		$(document).on('keyup', 'input#student_search', function(){
+
+			// get values 
+			let stu_val = $(this).val();
+
+			$.ajax({
+				url : 'templates/ajax/student_search.php',
+				method : "POST",
+				data : { stu_val : stu_val },
+				success : function(data){
+					$('.stu_res').html(data);
+				},
+
+			});
+
+		});
+
+		// select a student
+		$('.student_res_data').hide();
+		$(document).on('click', 'li#student_select', function(){
+
+			// get all values
+			let stu_id = $(this).attr('student_id');
+			let stu_name = $(this).attr('student_name');
+			let stu_roll = $(this).attr('student_roll');
+			let stu_reg = $(this).attr('student_reg');
+			let stu_pic = $(this).attr('student_pic');
+
+			
+
+			// set value
+			$('input#student_search').val(stu_id);
+			$('.stu_res').hide();
+			$('label#studentid').text('Student id');
+			$('input#student_search').attr('disabled', '');
+
+
+			// single student data
+			$('.student_res_data').show();
+			$('.student_res_data img').attr('src', 'student/' +stu_pic);
+			$('.student_res_data h3').html(stu_name);
+			$('.student_res_data h4').html('<strong>Roll: </strong>' +stu_roll+ '<strong>Reg: </strong>' +stu_reg);
+
+
+		});
+
 
 	});
 })(jQuery)

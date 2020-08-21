@@ -52,31 +52,46 @@
                                     <h2>Add Result</h2>
                                     <div class="mess"></div>
                                     <hr>
-                                    <form id="add_student_form" action="" method="POST" enctype="multipart/form-data">
+                                    <div class="student_res_data">
+                                        <img style="width: 200px; height: 200px; display: block; margin: auto;" src="" alt="">
+                                        <h3 class="text-center"></h3>
+                                        <h4 class="text-center"></h4>
+                                    </div>
+                                    <form id="add_student_form" action="" method="POST">
+
                                         <div class="form-group">
-                                            <label for="">Search Student</label>
-                                            <input class="form-control" name="name" type="text">
+                                            <div class="stu_res"></div>
+                                            <label id="studentid" for="">Search Student</label>
+                                            <input id="student_search" class="form-control" name="name" type="text">
+
+                                            
                                         </div>
+
                                         <div class="form-group">
                                             <label for="">Bangla</label>
                                             <input class="form-control" name="email" type="text">
                                         </div>
+
                                         <div class="form-group">
                                             <label for="">English</label>
                                             <input class="form-control" name="email" type="text">
                                         </div>
+
                                         <div class="form-group">
                                             <label for="">Math</label>
                                             <input class="form-control" name="email" type="text">
                                         </div>
+
                                         <div class="form-group">
                                             <label for="">Social Science</label>
                                             <input class="form-control" name="email" type="text">
                                         </div>
+
                                         <div class="form-group">
                                             <label for="">Science</label>
                                             <input class="form-control" name="email" type="text">
                                         </div>
+
                                         <div class="form-group">
                                             <label for="">Religion</label>
                                             <input class="form-control" name="email" type="text">
@@ -86,6 +101,7 @@
                                         <div class="form-group">
                                             <input class="btn btn-primary" name="add" type="submit" value="Add Result">
                                         </div>
+
                                     </form>
                                 </div>
                                 <!-- <div class="modal-footer"></div> -->

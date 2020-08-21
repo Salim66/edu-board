@@ -170,6 +170,17 @@
 
 		}
 
+		/**
+		 * Custom Query
+		 */
+		public function customQuery($query)
+		{
+			$sql = $query;
+			$stmt = $this -> connection() -> prepare($sql);
+			$stmt -> execute();
+			return $stmt;
+		}
+
 
 
 	}
