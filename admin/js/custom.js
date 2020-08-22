@@ -181,6 +181,11 @@
 
 		});
 
+		// Alert function
+		function msgAlert(msg, type = 'success'){
+			return "<p class='alert alert-"+type+"'>"+msg+" !<button class='close' data-dismiss='alert' >&times;</button></p>";
+		}
+
 		// Add Student Results
 		$(document).on('submit', 'form#add_student_result', function(e){
 			e.preventDefault();
@@ -194,7 +199,10 @@
 					processData : false,
 					success : function(data){
 
-						alert(data);
+						$('form#add_student_result')[0].reset();
+						$('#add_result').modal('hide');
+						$('.mess_a').html(msgAlert('Result added successfull'));
+						$('.student_res_data').hide();
 					},
 
 
