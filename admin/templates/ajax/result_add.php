@@ -1,11 +1,14 @@
 <?php 
 
+	require_once '../../../config.php';
+	require_once '../../../vendor/autoload.php';
+
+	use Edu\Board\Controller\Result;
+
+	$res = new Result;
 
 
-	print_r($_POST);
-
-
-
+	$res -> addResult($_POST);
 
 
 

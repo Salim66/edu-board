@@ -60,11 +60,10 @@
                                     <form id="add_student_result" action="" method="POST">
 
                                         <div class="form-group">
-                                            <div class="stu_res"></div>
                                             <label id="studentid" for="">Search Student</label>
                                             <input id="student_search" class="form-control" name="student_id" type="text">
 
-                                            
+                                            <div class="stu_res"></div>
                                         </div>
 
                                         <div class="form-group">
