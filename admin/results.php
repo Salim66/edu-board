@@ -57,44 +57,44 @@
                                         <h3 class="text-center"></h3>
                                         <h4 class="text-center"></h4>
                                     </div>
-                                    <form id="add_student_form" action="" method="POST">
+                                    <form id="add_student_result" action="" method="POST">
 
                                         <div class="form-group">
                                             <div class="stu_res"></div>
                                             <label id="studentid" for="">Search Student</label>
-                                            <input id="student_search" class="form-control" name="name" type="text">
+                                            <input id="student_search" class="form-control" name="student_id" type="text">
 
                                             
                                         </div>
 
                                         <div class="form-group">
                                             <label for="">Bangla</label>
-                                            <input class="form-control" name="email" type="text">
+                                            <input class="form-control" name="ban" type="text">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="">English</label>
-                                            <input class="form-control" name="email" type="text">
+                                            <input class="form-control" name="eng" type="text">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="">Math</label>
-                                            <input class="form-control" name="email" type="text">
+                                            <input class="form-control" name="math" type="text">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="">Social Science</label>
-                                            <input class="form-control" name="email" type="text">
+                                            <input class="form-control" name="ss" type="text">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="">Science</label>
-                                            <input class="form-control" name="email" type="text">
+                                            <input class="form-control" name="s" type="text">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="">Religion</label>
-                                            <input class="form-control" name="email" type="text">
+                                            <input class="form-control" name="rel" type="text">
                                         </div>
                                         
 

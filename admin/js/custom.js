@@ -179,6 +179,26 @@
 			$('.student_res_data h3').html(stu_name);
 			$('.student_res_data h4').html('<strong>Roll: </strong>' +stu_roll+ '<strong>Reg: </strong>' +stu_reg);
 
+		});
+
+		// Add Student Results
+		$(document).on('submit', 'form#add_student_result', function(e){
+			e.preventDefault();
+			$('input#student_search').removeAttr('disabled');
+			
+			$.ajax({
+					url : 'templates/ajax/result_add.php',
+					method : "POST",
+					data : new FormData(this),
+					contentType : false,
+					processData : false,
+					success : function(data){
+
+						alert(data);
+					},
+
+
+				});
 
 		});
 
