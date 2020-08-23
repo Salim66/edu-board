@@ -53,6 +53,18 @@
 			return $data -> fetchAll(PDO::FETCH_ASSOC);
 		}
 
+		/**
+		 * Single Student Delete
+		 */
+		public function studentDelete($id)
+		{
+			$data = $this -> delete('students', $id);
+			
+			if ($data) {
+				return true;
+			}
+		}
+
 
 	}
 

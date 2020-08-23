@@ -135,6 +135,29 @@
 
 		});
 
+		// Student delete function
+		$(document).on('click', 'a#single_student_delete', function(e){
+			e.preventDefault();
+
+			let del = confirm("Are you sure?");
+			let id = $(this).attr('student_id');
+
+			if ( del == true ) {
+				$.ajax({
+					url : 'templates/ajax/student_delete.php',
+					method : "POST",
+					data : { id : id },
+					success : function(data){
+						$('.mess').html(data);
+						allStudents();
+					},
+				});
+			} else {
+				return false;
+			}
+
+		});
+
 		// Search student for results
 		$(document).on('keyup', 'input#student_search', function(){
 
@@ -186,6 +209,39 @@
 			return "<p class='alert alert-"+type+"'>"+msg+" !<button class='close' data-dismiss='alert' >&times;</button></p>";
 		}
 
+		// all student results show
+		function allResults(){
+			$.ajax({
+				url : 'templates/ajax/result_all.php',
+				success : function(data){
+					$('table tbody#all_student_data_show').html(data);
+				}
+			});
+		}
+		allResults();
+
+		// Delete Student Result
+		$(document).on('click', 'a#delete_student_result', function(e){
+			e.preventDefault();
+
+			let del = confirm('Are you sure?');
+			let id = $(this).attr('result_id');
+
+			if ( del == true ) {
+				$.ajax({
+					url : 'templates/ajax/result_delete.php',
+					method : "POST",
+					data : { id : id },
+					success : function(data){
+						$('.mess_a').html(data);
+						allResults();
+					}
+				});
+			} else {
+				return false;
+			}
+		});
+
 		// Add Student Results
 		$(document).on('submit', 'form#add_student_result', function(e){
 			e.preventDefault();
@@ -203,6 +259,7 @@
 						$('#add_result').modal('hide');
 						$('.mess_a').html(msgAlert('Result added successfull'));
 						$('.student_res_data').hide();
+						allResults();
 					},
 
 
